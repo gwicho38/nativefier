@@ -1,4 +1,12 @@
-Note: Nativefier is unmaintained, please see https://github.com/nativefier/nativefier/issues/1577.
+# Nativefier (Maintained Fork)
+
+> **📢 Notice**: This is a maintained fork of the [original Nativefier project](https://github.com/nativefier/nativefier), which was archived in September 2023.
+>
+> **Latest Version**: v53.0.0 (October 2025) - Electron 39.0.0, Node 18+
+>
+> See [FORK_NOTICE.md](FORK_NOTICE.md) for details about this fork and alternatives.
+
+---
 
 # Nativefier
 
