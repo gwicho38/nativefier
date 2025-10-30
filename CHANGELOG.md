@@ -1,4 +1,36 @@
 
+53.0.0 / 2025-10-30
+===================
+  **[BREAKING]**
+  * Update to Electron 39.0.0 (includes Chromium 142, Node 22.20.0)
+  * Minimum Node.js version increased from 16.16.0 to 18.0.0
+  * Minimum npm version increased from 8.11.0 to 9.0.0
+  * Icon parameter now accepts string | string[] for multi-resolution support
+  * Replace deprecated electron-packager with @electron/packager
+
+  **Major Updates**
+  * Update axios to 1.7.9 (security fixes)
+  * Update TypeScript to 5.7.3
+  * Update webpack to 5.97.1, webpack-cli to 6.0.1
+  * Update playwright to 1.49.1
+  * Update jest to 29.7.0
+  * Update all @types packages to latest versions
+  * Update TypeScript targets to ES2021/ES2022
+
+  **Bug Fixes**
+  * Fix TypeScript compilation error in playwright-test.ts
+  * Fix icon handling to support both string and string[] types
+  * Resolve @electron/asar version conflicts
+  * Update event handling to use playwright native API
+
+  **Documentation**
+  * Add comprehensive release notes (docs/releases/53.0.0.md)
+  * Create improvement roadmap (docs/IMPROVEMENTS.md)
+  * Document all breaking changes and migration paths
+
+  **Known Issues**
+  * Axios vulnerabilities in gitcloud and page-icon transitive dependencies
+
 52.0.0 / 2023-08-25
 ===================
   **[BREAKING]**
