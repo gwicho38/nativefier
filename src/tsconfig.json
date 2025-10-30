@@ -16,10 +16,10 @@
     // are supported for our version of Node, and use what they recommend.
     // For the current Node version, I followed
     // https://stackoverflow.com/questions/59787574/typescript-tsconfig-settings-for-node-js-12
-    "target": "es2019",
+    "target": "es2021",
     // In `lib` we add `dom`, to tell tsc it's okay to use the URL object (which is in Node >= 7)
     "lib": [
-      "es2020",
+      "es2021",
       "dom"
     ],
   },

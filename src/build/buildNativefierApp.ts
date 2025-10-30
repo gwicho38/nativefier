@@ -1,7 +1,7 @@
 import * as path from 'path';
 
 import * as electronGet from '@electron/get';
-import electronPackager from 'electron-packager';
+import electronPackager from '@electron/packager';
 import * as fs from 'fs-extra';
 import * as log from 'loglevel';
 
@@ -40,6 +40,11 @@ async function copyIconsIfNecessary(
     return;
   }
 
+  // Handle icon as array (use first icon)
+  const iconPath = Array.isArray(options.packager.icon)
+    ? options.packager.icon[0]
+    : options.packager.icon;
+
   if (
     options.packager.platform === 'darwin' ||
     options.packager.platform === 'mas'
@@ -50,7 +55,7 @@ async function copyIconsIfNecessary(
       const trayIconFileName = `tray-icon.png`;
       const destIconPath = path.join(appPath, 'icon.png');
       await fs.copy(
-        `${path.dirname(options.packager.icon)}/${trayIconFileName}`,
+        `${path.dirname(iconPath)}/${trayIconFileName}`,
         destIconPath,
       );
     } else {
@@ -60,11 +65,11 @@ async function copyIconsIfNecessary(
   }
 
   // windows & linux: put the icon file into the app
-  const destFileName = `icon${path.extname(options.packager.icon)}`;
+  const destFileName = `icon${path.extname(iconPath)}`;
   const destIconPath = path.join(appPath, destFileName);
 
-  log.debug(`Copying icon ${options.packager.icon} to`, destIconPath);
-  await fs.copy(options.packager.icon, destIconPath);
+  log.debug(`Copying icon ${iconPath} to`, destIconPath);
+  await fs.copy(iconPath, destIconPath);
 }
 
 /**

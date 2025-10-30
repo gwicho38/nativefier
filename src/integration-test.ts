@@ -54,8 +54,8 @@ async function checkApp(
     inputOptions.platform === 'darwin'
       ? path.join('..', 'electron.icns')
       : inputOptions.platform === 'linux'
-      ? 'icon.png'
-      : 'icon.ico';
+        ? 'icon.png'
+        : 'icon.ico';
   const iconPath = path.join(appPath, iconFile);
   expect(fs.existsSync(iconPath)).toEqual(true);
   expect(fs.statSync(iconPath).size).toBeGreaterThan(1000);

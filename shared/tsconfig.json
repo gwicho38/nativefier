@@ -6,9 +6,9 @@
     // Here we want to set target and lib to the *worst* of app/tsconfig.json and src/tsconfig.json
     // (plus "dom"), because shared code will run both in CLI Node and app Node.
     // See comments in app/tsconfig.json and src/tsconfig.json
-    "target": "es2018",
+    "target": "es2021",
     "lib": [
-      "es2018",
+      "es2021",
       "dom"
     ]
   },

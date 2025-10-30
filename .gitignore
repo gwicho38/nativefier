@@ -65,3 +65,6 @@ nativefier*.tgz
 
 tsconfig.tsbuildinfo
 scripts
+
+# Claude Code local settings
+.claude

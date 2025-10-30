@@ -1,6 +1,6 @@
 import { CreateOptions } from '@electron/asar';
 import { randomUUID } from 'crypto';
-import * as electronPackager from 'electron-packager';
+import * as electronPackager from '@electron/packager';
 
 export type TitleBarValue =
   | 'default'
@@ -165,7 +165,7 @@ export type RawOptions = {
   globalShortcuts?: string | GlobalShortcut[];
   height?: number;
   hideWindowFrame?: boolean;
-  icon?: string;
+  icon?: string | string[];
   ignoreCertificate?: boolean;
   ignoreGpuBlacklist?: boolean;
   inject?: string[];
@@ -231,7 +231,7 @@ export function outputOptionsToWindowOptions(
     autoHideMenuBar: !options.showMenuBar,
     insecure: options.insecure ?? false,
     tabbingIdentifier: generateTabbingIdentifierIfMissing
-      ? options.tabbingIdentifier ?? randomUUID()
+      ? (options.tabbingIdentifier ?? randomUUID())
       : options.tabbingIdentifier,
     zoom: options.zoom ?? 1.0,
   };

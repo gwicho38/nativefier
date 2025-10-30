@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import 'source-map-support/register';
 
-import electronPackager = require('electron-packager');
+import electronPackager = require('@electron/packager');
 import * as log from 'loglevel';
 import yargs from 'yargs';
 
@@ -604,7 +604,7 @@ export function parseArgs(args: yargs.Argv<RawOptions>): RawOptions {
     'file-download-options',
   ]) {
     if (parsed[arg] && typeof parsed[arg] === 'string') {
-      parsed[arg] = parseJson(parsed[arg] as string);
+      parsed[arg] = parseJson(parsed[arg]);
       // sets fileDownloadOptions and browserWindowOptions
       // as parsed object as they were still strings in `nativefier.json`
       // because only their snake-cased variants were being parsed above

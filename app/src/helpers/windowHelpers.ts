@@ -153,7 +153,7 @@ export function getDefaultWindowOptions(
     autoHideMenuBar: options.autoHideMenuBar,
     fullscreenable: true,
     tabbingIdentifier: nativeTabsSupported()
-      ? options.tabbingIdentifier ?? randomUUID()
+      ? (options.tabbingIdentifier ?? randomUUID())
       : undefined,
     title: options.name,
     webPreferences: {

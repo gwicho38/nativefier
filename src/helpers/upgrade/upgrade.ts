@@ -117,7 +117,7 @@ function getInfoPListOptions(
       bundleVersion === undefined || bundleVersion === '1.0.0' // If it's 1.0.0, that's just the default
         ? undefined
         : bundleVersion;
-    (newOptions.darwinDarkModeSupport =
+    ((newOptions.darwinDarkModeSupport =
       newOptions.darwinDarkModeSupport === undefined
         ? undefined
         : newOptions.darwinDarkModeSupport === false),
@@ -125,7 +125,7 @@ function getInfoPListOptions(
         `Extracted app version from Info.plist: ${
           newOptions.appVersion as string
         }`,
-      );
+      ));
   }
 
   if (newOptions.darwinDarkModeSupport === undefined) {

@@ -4,7 +4,7 @@ import { inferIcon } from '../../infer/inferIcon';
 
 type IconParams = {
   packager: {
-    icon?: string;
+    icon?: string | string[];
     targetUrl: string;
     platform?: string;
   };
