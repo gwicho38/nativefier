@@ -40,6 +40,7 @@ export interface AppOptions {
     diskCacheSize?: number;
     electronVersionUsed?: string;
     enableEs3Apis: boolean;
+    externalOauth: boolean;
     fastQuit: boolean;
     fileDownloadOptions?: Record<string, unknown>;
     flashPluginDir?: string;
@@ -157,6 +158,7 @@ export type RawOptions = {
   electronVersion?: string;
   electronVersionUsed?: string;
   enableEs3Apis?: boolean;
+  externalOauth?: boolean;
   fastQuit?: boolean;
   fileDownloadOptions?: Record<string, unknown>;
   flashPath?: string;
@@ -210,6 +212,7 @@ export type WindowOptions = {
   autoHideMenuBar: boolean;
   blockExternalUrls: boolean;
   browserwindowOptions?: BrowserWindowOptions;
+  externalOauth: boolean;
   insecure: boolean;
   internalUrls?: string | RegExp;
   strictInternalUrls?: boolean;
@@ -229,6 +232,7 @@ export function outputOptionsToWindowOptions(
   return {
     ...options,
     autoHideMenuBar: !options.showMenuBar,
+    externalOauth: options.externalOauth ?? true,
     insecure: options.insecure ?? false,
     tabbingIdentifier: generateTabbingIdentifierIfMissing
       ? (options.tabbingIdentifier ?? randomUUID())

@@ -56,6 +56,7 @@ export function onNewWindowHelper(
         details.url,
         options.internalUrls,
         options.strictInternalUrls,
+        options.externalOauth,
       )
     ) {
       if (options.blockExternalUrls) {
@@ -117,6 +118,7 @@ export function onWillNavigate(
       urlToGo,
       options.internalUrls,
       options.strictInternalUrls,
+      options.externalOauth,
     )
   ) {
     event.preventDefault();

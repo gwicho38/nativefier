@@ -24,6 +24,7 @@ describe('fields', () => {
         disableOldBuildWarning: false,
         diskCacheSize: undefined,
         enableEs3Apis: false,
+        externalOauth: true,
         fastQuit: true,
         fileDownloadOptions: undefined,
         flashPluginDir: undefined,

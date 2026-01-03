@@ -213,10 +213,17 @@ export function linkIsInternal(
   newUrl: string,
   internalUrlRegex: string | RegExp | undefined,
   isStrictInternalUrlsEnabled: boolean | undefined,
+  externalOauth?: boolean,
 ): boolean {
-  log.debug('linkIsInternal', { currentUrl, newUrl, internalUrlRegex });
+  log.debug('linkIsInternal', { currentUrl, newUrl, internalUrlRegex, externalOauth });
   if (newUrl.split('#')[0] === 'about:blank') {
     return true;
+  }
+
+  // If externalOauth is enabled, treat OAuth/SSO pages as external
+  if (externalOauth && isInternalLoginPage(newUrl)) {
+    log.debug('Treating OAuth page as external', { newUrl });
+    return false;
   }
 
   if (isInternalLoginPage(newUrl)) {

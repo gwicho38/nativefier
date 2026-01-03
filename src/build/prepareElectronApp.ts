@@ -48,6 +48,7 @@ function pickElectronAppArgs(options: AppOptions): OutputOptions {
     electronVersionUsed: options.packager.electronVersion,
     enableEs3Apis: options.nativefier.enableEs3Apis,
     executableName: options.packager.executableName,
+    externalOauth: options.nativefier.externalOauth,
     fastQuit: options.nativefier.fastQuit,
     fileDownloadOptions: options.nativefier.fileDownloadOptions,
     flashPluginDir: options.nativefier.flashPluginDir,

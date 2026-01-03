@@ -86,6 +86,7 @@ export async function getOptions(rawOptions: RawOptions): Promise<AppOptions> {
       disableOldBuildWarning:
         rawOptions.disableOldBuildWarningYesiknowitisinsecure ?? false,
       enableEs3Apis: rawOptions.enableEs3Apis ?? false,
+      externalOauth: rawOptions.externalOauth ?? true,
       fastQuit: rawOptions.fastQuit ?? false,
       fileDownloadOptions: rawOptions.fileDownloadOptions,
       flashPluginDir: rawOptions.flashPath,

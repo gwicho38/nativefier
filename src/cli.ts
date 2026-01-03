@@ -415,6 +415,16 @@ export function initArgs(argv: string[]): yargs.Argv<RawOptions> {
       ['disable-gpu', 'enable-es3-apis', 'ignore-gpu-blacklist'],
       decorateYargOptionGroup('Graphics Options'),
     )
+    // OAuth Options
+    .option('external-oauth', {
+      default: true,
+      description: 'open OAuth/SSO authentication pages in the system default browser instead of embedded webview (recommended for security)',
+      type: 'boolean',
+    })
+    .group(
+      ['external-oauth'],
+      decorateYargOptionGroup('OAuth Options'),
+    )
     // (In)Security Options
     .option('disable-old-build-warning-yesiknowitisinsecure', {
       default: false,
@@ -659,7 +669,8 @@ if (require.main === module) {
     parsedArgs = parseArgs(args);
   } catch (err: unknown) {
     if (args) {
-      log.error(err);
+      const errorMessage = err instanceof Error ? err.message : String(err);
+      console.error(errorMessage.replace(/^ERROR: /, ''));
       args.showHelp();
     } else {
       log.error('Failed to parse command-line arguments. Aborting.', err);
@@ -697,6 +708,8 @@ if (require.main === module) {
 
   if (!options.out && process.env.NATIVEFIER_APPS_DIR) {
     options.out = process.env.NATIVEFIER_APPS_DIR;
+  } else if (!options.out && process.platform === 'darwin') {
+    options.out = '/Applications';
   }
 
   buildNativefierApp(options).catch((error) => {

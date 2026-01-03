@@ -1,6 +1,30 @@
 {
   "version": "1.0",
-  "initialized_at": "2025-10-31T10:24:55.105446",
-  "scope": "local",
-  "commands": {}
+  "generated_at": "2025-11-01T00:20:15.274257Z",
+  "commands": {
+    "nativefier": {
+      "name": "nativefier",
+      "description": "Custom command",
+      "group": "workflow",
+      "version": "1.0",
+      "created_at": "2025-10-31T23:05:10.568641Z",
+      "updated_at": "2025-10-31T23:05:10.568699Z"
+    },
+    "hello-shell": {
+      "name": "hello-shell",
+      "description": "Demo shell workflow",
+      "group": "workflow",
+      "version": "1.0",
+      "created_at": "2025-11-01T00:00:00.000000Z",
+      "updated_at": "2025-11-01T00:00:00.000000Z"
+    },
+    "deploy_app": {
+      "name": "deploy_app",
+      "description": "Deploy the application",
+      "group": "workflow",
+      "version": "1.0",
+      "created_at": "2025-11-01T00:20:15.274007Z",
+      "updated_at": "2025-11-01T00:20:15.274020Z"
+    }
+  }
 }

@@ -68,3 +68,8 @@ scripts
 
 # Claude Code local settings
 .claude
+
+# Environment variables (managed by LSH)
+.env
+.env.local
+.env.*.local
